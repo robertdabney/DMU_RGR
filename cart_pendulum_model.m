@@ -32,12 +32,18 @@ x_variance = .05; % meters
 theta_variance = 5*pi/180; % radians
 sim("model")
 %%
-% figure;
-% plot(x_out);
-% legend('x','x dot', 'theta','theta dot');
-
-
 figure;
-plot(z_out);
+hold on;
+plot(t_out, x_out(:, 1));
+plot(t_out, x_out(:, 2));
+plot(t_out, x_out(:, 3));
+plot(t_out, x_out(:, 4));
+plot(t_out, z_out(:, 1));
+plot(t_out, z_out(:, 2));
+legend('x','x dot', 'theta','theta dot', "x noise", "theta noise");
+
+
+% figure;
+% plot(z_out);
 % figure;
 % plot(noise);
