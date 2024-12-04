@@ -27,21 +27,38 @@
 rng(1234);
 Tfinal=20;
 step_size = .01;
-init_cond = [0, 0, 10*pi/180, 0];
-x_variance = .05; % meters
+init_cond = [0; 0; 10*pi/180; 0];
+x_variance = .005; % meters
 theta_variance = 5*pi/180; % radians
+s1_variance = .005;
+s2_variance = .01;
+s3_variance = .05;
+s4_variance = .1;
+Q = [s1_variance,0,0,0;
+     0,s2_variance,0,0;
+     0,0,s3_variance,0;
+     0,0,0,s4_variance];
+R = [x_variance,0;0,theta_variance];
 sim("model")
 %%
-figure;
-hold on;
-plot(t_out, x_out(:, 1));
-plot(t_out, x_out(:, 2));
-plot(t_out, x_out(:, 3));
-plot(t_out, x_out(:, 4));
-plot(t_out, z_out(:, 1));
-plot(t_out, z_out(:, 2));
-legend('x','x dot', 'theta','theta dot', "x noise", "theta noise");
+% figure;
+% hold on;
+% plot(t_out, x_out(:, 1));
+% plot(t_out, x_out(:, 2));
+% plot(t_out, x_out(:, 3));
+% plot(t_out, x_out(:, 4));
+% plot(t_out, z_out(:, 1));
+% plot(t_out, z_out(:, 2));
+% legend('x','x dot', 'theta','theta dot', "x noise", "theta noise");
 
+figure(1)
+plot(xhat);
+
+figure(2)
+plot(x_out);
+
+figure(3)
+plot(z_out);
 
 % figure;
 % plot(z_out);
