@@ -34,12 +34,13 @@ s1_variance = .005;
 s2_variance = .01;
 s3_variance = .05;
 s4_variance = .1;
-x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001;
+% x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001;
 Q = [s1_variance,0,0,0;
      0,s2_variance,0,0;
      0,0,s3_variance,0;
      0,0,0,s4_variance];
 R = [x_variance,0;0,theta_variance];
+run("lqr_calcs_2.m")
 sim("model")
 %%
 % figure;
