@@ -14,10 +14,10 @@ A = F_func(operating_point_2,0);
 B = U_func(operating_point_2);
 
 R=1;
-Q=100*[.01,0,0,0;
-   0,.01,0,0;
-   0,0,100,0;
-   0,0,0,.01];
+Q=50*[100,0,0,0;
+   0,1,0,0;
+   0,0, 500,0;
+   0,0,0,1];
 k_down = lqr(A,B,Q,R);
 
 function dFdu = U_func(xhat)
