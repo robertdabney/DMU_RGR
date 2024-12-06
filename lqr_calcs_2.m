@@ -9,6 +9,17 @@ Q=100*[.5,0,0,0;
    0,0,0,1];
 k_vert = lqr(A,B,Q,R);
 
+operating_point_2 = [0,0,pi,0];
+A = F_func(operating_point_2,0);
+B = U_func(operating_point_2);
+
+R=1;
+Q=100*[.01,0,0,0;
+   0,.01,0,0;
+   0,0,100,0;
+   0,0,0,.01];
+k_down = lqr(A,B,Q,R);
+
 function dFdu = U_func(xhat)
 
 mb=2.3;

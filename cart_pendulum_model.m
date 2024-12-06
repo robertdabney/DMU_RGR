@@ -27,8 +27,8 @@
 rng(1234);
 Tfinal=20;
 step_size = .01;
-init_cond = [0; 0; 10*pi/180; 0];
-x_variance = .005; % meters
+init_cond = [0; 0; 180*pi/180; 0];
+x_variance = .001; % meters
 theta_variance = 5*pi/180; % radians
 s1_variance = .005;
 s2_variance = .01;
