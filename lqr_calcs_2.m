@@ -14,9 +14,9 @@ A = F_func(operating_point_2,0);
 B = U_func(operating_point_2);
 
 R=1;
-Q=50*[100,0,0,0;
+Q=15*[100,0,0,0;
    0,1,0,0;
-   0,0, 500,0;
+   0,0, 600,0;
    0,0,0,1];
 k_down = lqr(A,B,Q,R);
 
