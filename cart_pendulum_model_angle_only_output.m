@@ -34,7 +34,7 @@ s1_variance = .005;
 s2_variance = .01;
 s3_variance = .05;
 s4_variance = .1;
-% x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001;
+x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001;
 Q = [s1_variance,0,0,0;
      0,s2_variance,0,0;
      0,0,s3_variance,0;
@@ -56,7 +56,10 @@ sim("model_angle_only_output.slx")
 
 figure(1)
 plot(xhat);
-legend('x','xdot','theta','thetadot');
+title("Angle Only Response")
+ylabel("Radians and Meters");
+xlabel("Time")
+legend('x hat','x dot hat','theta hat','theta dot hat')
 
 figure(2)
 plot(x_out);
