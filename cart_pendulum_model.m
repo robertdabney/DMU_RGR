@@ -26,7 +26,7 @@
 
 rng(1234);
 Tfinal=20;
-step_size = .01;
+step_size = .005;
 init_cond = [0; 0; 180*pi/180; 0];
 
 
@@ -40,7 +40,7 @@ s4_variance = .1;
 
 
 % Variance deleter
-% x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001; x_variance=0.00001, theta_variance=0.0001
+% x_variance=.0001;theta_variance=.0001;s1_variance=.0001;s2_variance=.0001;s3_variance=.0001;s4_variance = .0001; x_variance=0.00001; theta_variance=0.0001;
 
 
 
@@ -67,16 +67,15 @@ plot(xhat);
 legend('x','xdot','theta','thetadot');
 
 figure(2)
-plot(cstate)
+plot(x_out);
+legend('x','xdot','theta','thetadot');
 
-% figure(2)
-% plot(x_out);
-% 
-% figure(3)
-% plot(z_out);
-% 
-% figure(4)
-% plot(control_effort);
+figure(3)
+plot(z_out);
+legend('x','theta');
+
+figure(4)
+plot(control_effort);
 
 % figure;
 % plot(z_out);
